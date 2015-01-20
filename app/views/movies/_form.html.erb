@@ -20,8 +20,8 @@
     <%= f.select :format, options_for_select(%w[VHS DVD Streaming]) %>
   </div>
   <div class="field">
-    <%= f.label :length %><br>
-    <%= f.time_select :length %>
+    <%= f.label :length_in_mins  %><br>
+    <%= f.number_field :length %>
   </div>
   <div class="field">
     <%= f.label :release_year %><br>
