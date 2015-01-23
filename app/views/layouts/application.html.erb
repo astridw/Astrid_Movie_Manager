@@ -5,11 +5,16 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
 <div class="container">
-    <%= yield %>
+  <img alt="full screen background image" src="http://kielascabaret.com/wp-content/uploads/2012/09/Red-Closed-Curtains-Movie-Theatre.jpg"
+  id="full-screen-background-image" />
+  <div id="wrapper">
+      <%= yield %>
+      <p></p>
+    </div>
 </div>
 </body>
 </html>

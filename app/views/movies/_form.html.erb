@@ -1,37 +1,39 @@
-<%= form_for(@movie) do |f| %>
-  <% if @movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+<center>
+  <%= form_for(@movie) do |f| %>
+    <% if @movie.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
-      <ul>
-      <% @movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_area :title %>
+    </div>
+    <div class="field">
+      <%= f.label :format %><br>
+      <%= f.select :format, options_for_select(%w[VHS DVD Streaming]) %>
+    </div>
+    <div class="field">
+      <%= f.label :length_in_mins  %><br>
+      <%= f.number_field :length %>
+    </div>
+    <div class="field">
+      <%= f.label :release_year %><br>
+      <%= f.number_field :release_year %>
+    </div>
+    <div class="field">
+      <%= f.label :rating %><br>
+      <%= f.number_field :rating %>
+    </div>
+    <div class="btn btn-lg">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
-  </div>
-  <div class="field">
-    <%= f.label :format %><br>
-    <%= f.select :format, options_for_select(%w[VHS DVD Streaming]) %>
-  </div>
-  <div class="field">
-    <%= f.label :length_in_mins  %><br>
-    <%= f.number_field :length %>
-  </div>
-  <div class="field">
-    <%= f.label :release_year %><br>
-    <%= f.number_field :release_year %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</center>
