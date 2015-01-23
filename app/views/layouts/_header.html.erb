@@ -15,9 +15,9 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
         <p>
-      <% form_tag root_path, method: 'get' do %>
+      <!-- <% form_tag root_path, method: 'get' do %>
         <%= text_field_tag :search, params[:search], class: "form-control navbar-right", placeholder: "Search" %>
-        <% end %>
+        <% end %> -->
         <!-- <%= submit_tag "Search", name: nil, class: "btn btn-default" %> -->
       </p>
     </ul>
