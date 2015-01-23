@@ -6,8 +6,9 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.order(sort_column + " " + sort_direction)
-    @movie = @movie.search(params[:search]) if params[:search].present?
+    @movies = Movie.all
+    @q = Movie.ransack(params[:q])
+    @movies = @q.result(distinct: true)
   end
 
   def show

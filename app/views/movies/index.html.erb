@@ -3,11 +3,11 @@
   <table class="pretty">
     <thead>
       <tr>
-        <th><%= sortable "Title" %></th>
-        <th><%= sortable "Format" %></th>
-        <th><%= sortable "Length" %></th>
-        <th><%= sortable "Release Year"%></th>
-        <th><%= sortable "Rating"%></th>
+        <th><%= sort_link(@q, :title) %></th>
+        <th><%= sort_link(@q, :format) %></th>
+        <th><%= sort_link(@q, :length) %></th>
+        <th><%= sort_link(@q, :release_year)%></th>
+        <th><%= sort_link(@q, :rating)%></th>
         <th colspan="3"></th>
       </tr>
     </thead>

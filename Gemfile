@@ -29,6 +29,7 @@ gem "default_value_for", "~> 3.0.0"
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'pg_search'
 gem 'rails_12factor'
+gem 'ransack'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
