@@ -14,13 +14,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
-
-      <%= form_tag search_movies_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-      <p>
-        <%= text_field_tag :search, params[:search], class: "form-control" %>
-        <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        <p>
+      <% form_tag root_path, method: 'get' do %>
+        <%= text_field_tag :search, params[:search], class: "form-control navbar-right", placeholder: "Search" %>
+        <% end %>
+        <!-- <%= submit_tag "Search", name: nil, class: "btn btn-default" %> -->
       </p>
-      <% end %>
     </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

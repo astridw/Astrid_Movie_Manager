@@ -5,5 +5,10 @@ class Movie < ActiveRecord::Base
   validates :rating, presence: true, inclusion: { in: [nil, 1,2,3,4,5],
     message: 'Please rate this movie between 1 and 5' }
     default_value_for :rating, nil
-    searchkick
+    include PgSearch
+    pg_search_scope :search,
+    against: [:title, :format, :length, :release_year, :rating],
+    using: {
+      tsearch: {dictionary: "english"}
+    }
 end

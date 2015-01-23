@@ -5,16 +5,9 @@ class MoviesController < ApplicationController
   def home
   end
 
-  def search
-    if params[:search].present?
-      @movies = Movie.search(params[:search])
-    else
-      @movies = Movie.all
-    end
-  end
-  
   def index
     @movies = Movie.order(sort_column + " " + sort_direction)
+    @movie = @movie.search(params[:search]) if params[:search].present?
   end
 
   def show
